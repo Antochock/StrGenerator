@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="generator">
+      <div class="result {{color}}" id="generator">{{str}}</div>
+      <div class="bonus">{{bonusText}}</div>
+    </div>
+    <div class="cntrl">
+      <button class="btn" (click)="start()">{{btnText}}</button>
+      <button class="btn"  (click)="showList()">{{showText}}</button>
+      <button class="btn"  (click)="clearList()">Clear Log</button>
+      </div>
+    <div class="history" *ngIf="open">
+        <div class="table">
+          <div>Timer</div>
+          <div>Random String</div>
+          <div>Bonus match</div>
+        </div>
+      <div class="table" *ngFor="let str of stringList;"  >
+        <div>{{str.time}}</div>
+        <div class="{{str.color}}">{{str.string}}</div>
+        <div>{{str.bonus}}</div>
+      </div>
+    </div>
+</div>
+
+
